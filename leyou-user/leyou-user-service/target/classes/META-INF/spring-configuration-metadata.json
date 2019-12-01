@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "amqp.email",
+      "type": "com.tang.leyou.user.domain.EmailProperties",
+      "sourceType": "com.tang.leyou.user.domain.EmailProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "amqp.email.email-key",
+      "type": "java.lang.String",
+      "sourceType": "com.tang.leyou.user.domain.EmailProperties"
+    },
+    {
+      "name": "amqp.email.exchange",
+      "type": "java.lang.String",
+      "sourceType": "com.tang.leyou.user.domain.EmailProperties"
+    }
+  ],
+  "hints": []
+}

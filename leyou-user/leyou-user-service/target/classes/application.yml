@@ -1,0 +1,48 @@
+server:
+  port: 8073
+
+
+
+spring:
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 721000
+    url: jdbc:mysql://localhost:3306/heima?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
+    type: com.zaxxer.hikari.HikariDataSource
+
+  redis:
+    sentinel:
+      master: mymaster
+      nodes: 192.168.108.128:26379,192.168.25.128:26380,192.168.25.128:26381
+    lettuce:
+      pool:
+        max-idle: 8
+        max-active: 8
+        max-wait: -1ms
+
+  application:
+    name: leyou-user-service
+
+  rabbitmq:
+    host: 192.168.108.128
+    port: 5672
+    username: guest
+    password: guest
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.108.127:8082/eureka
+    registry-fetch-interval-seconds: 5
+
+amqp:
+  email:
+    exchange: amqp.email # 交换机名称
+    emailKey: email.key
+
+logging:
+  level:
+    com.tang.leyou.user.mapper: debug

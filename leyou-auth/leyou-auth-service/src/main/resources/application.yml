@@ -1,0 +1,24 @@
+server:
+  port: 8075
+
+spring:
+  application:
+    name: leyou-auth-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.108.127:8082/eureka
+    #    5秒抓取一次
+    registry-fetch-interval-seconds: 5
+
+feign:
+  hystrix:
+    enabled: true
+
+jwt:
+  pubKeyPath: C:\\TEMP\\rsa\\rsa.pub
+  priKeyPath: C:\\TEMP\\rsa\\rsa.pri
+  secret: leyou@Login(Auth}*^31)&heiMa%  # secret 值
+  expire: 30   # 过期时间
+  cookieName: leyou
