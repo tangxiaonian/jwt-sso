@@ -1,0 +1,37 @@
+{
+  "groups": [
+    {
+      "name": "jwt",
+      "type": "com.tang.leyou.register.config.JwtProperties",
+      "sourceType": "com.tang.leyou.register.config.JwtProperties"
+    },
+    {
+      "name": "leyou.filter",
+      "type": "com.tang.leyou.register.config.ZuulFilterProperties",
+      "sourceType": "com.tang.leyou.register.config.ZuulFilterProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "jwt.cookie-name",
+      "type": "java.lang.String",
+      "sourceType": "com.tang.leyou.register.config.JwtProperties"
+    },
+    {
+      "name": "jwt.pub-key-path",
+      "type": "java.lang.String",
+      "sourceType": "com.tang.leyou.register.config.JwtProperties"
+    },
+    {
+      "name": "jwt.public-key",
+      "type": "java.security.PublicKey",
+      "sourceType": "com.tang.leyou.register.config.JwtProperties"
+    },
+    {
+      "name": "leyou.filter.allow-paths",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.tang.leyou.register.config.ZuulFilterProperties"
+    }
+  ],
+  "hints": []
+}

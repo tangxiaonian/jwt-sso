@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: leyou-gateway
+
+server:
+  port: 8082
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.108.127:8082/eureka
+#    5秒抓取一次
+    registry-fetch-interval-seconds: 5
+
+zuul:
+  prefix: /api
+  routes:
+    itemService:
+      serviceId: leyou-item-service
+      path: /item/**
+    userService:
+      serviceId: leyou-user-service
+      path: /user/**
+    authService:
+      serviceId: leyou-auth-service
+      path: /auth/**
+  sensitive-headers:   # 覆盖默认的 忽略掉敏感信息
+  add-host-header: true  # 携带请求本身的header头信息
+
+leyou:
+  filter:
+    allowPaths:
+      - /api/auth
+      - /api/user/check
+      - /api/user/code
+
+jwt:
+  pubKeyPath: C:\\TEMP\\rsa\\rsa.pub
+  cookieName: leyou
